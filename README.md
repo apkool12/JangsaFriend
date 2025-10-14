@@ -1,4 +1,4 @@
-# 장사 앱
+# 장사 친구
 
 Expo + TypeScript + styled-components로 구축된 React Native 애플리케이션입니다.
 

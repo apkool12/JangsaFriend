@@ -4,5 +4,10 @@
     "strict": true,
     "types": ["styled-components-react-native"]
   },
-  "include": ["**/*.ts", "**/*.tsx", "src/styles/styled.d.ts"]
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "src/styles/styled.d.ts",
+    "src/types/svg.d.ts"
+  ]
 }

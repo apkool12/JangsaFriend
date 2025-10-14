@@ -1,15 +1,22 @@
 export const theme = {
   colors: {
-    primary: "#007AFF",
-    secondary: "#5856D6",
+    primary: "#FFD700",
+    secondary: "#FFA500",
     background: "#FFFFFF",
-    surface: "#F2F2F7",
-    text: "#000000",
-    textSecondary: "#8E8E93",
+    surface: "#F8F8F8",
+    cardBackground: "#F5F5F5",
+    text: "#1A1A1A",
+    textSecondary: "#666666",
+    textTertiary: "#999999",
+    brand: "#8B4513",
+    accent: "#FFD700",
     error: "#FF3B30",
     success: "#34C759",
     warning: "#FF9500",
     info: "#5AC8FA",
+    chartRed: "#FF6B6B",
+    chartYellow: "#FFD93D",
+    chartTeal: "#6BCF7F",
   },
   spacing: {
     xs: 4,
@@ -39,6 +46,19 @@ export const theme = {
     medium: "500" as const,
     semibold: "600" as const,
     bold: "700" as const,
+  },
+  shadows: {
+    card: "0px 2px 8px rgba(0, 0, 0, 0.1)",
+    button: "0px 4px 12px rgba(0, 0, 0, 0.15)",
+    fab: "0px 8px 24px rgba(0, 0, 0, 0.2)",
+  },
+  iconSizes: {
+    xs: 16,
+    sm: 20,
+    md: 24,
+    lg: 32,
+    xl: 40,
+    xxl: 48,
   },
 };
 
