@@ -16,12 +16,8 @@ const IconButtonContainer = styled.TouchableOpacity`
   height: 80px;
   border-radius: 40px;
   background-color: ${(props: ThemedProps) => props.theme.colors.surface};
-  margin-horizontal: ${(props: ThemedProps) => props.theme.spacing.sm}px;
-  shadow-color: #000;
-  shadow-offset: 0px 2px;
-  shadow-opacity: 0.1;
-  shadow-radius: 4px;
-  elevation: 3;
+  margin-left: ${(props: ThemedProps) => props.theme.spacing.sm}px;
+  margin-right: ${(props: ThemedProps) => props.theme.spacing.sm}px;
 `;
 
 const IconLabel = styled.Text`
@@ -33,16 +29,12 @@ const IconLabel = styled.Text`
 `;
 
 interface IconButtonProps {
-  iconSource: ImageSourcePropType | React.FC<SvgProps>;
+  iconSource: ImageSourcePropType | React.ComponentType<SvgProps>;
   label: string;
   onPress?: () => void;
 }
 
-export const IconButton: React.FC<IconButtonProps> = ({
-  iconSource,
-  label,
-  onPress,
-}) => {
+export const IconButton = ({ iconSource, label, onPress }: IconButtonProps) => {
   return (
     <IconButtonContainer onPress={onPress}>
       <CustomIcon source={iconSource} size={32} />

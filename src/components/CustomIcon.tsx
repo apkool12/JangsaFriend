@@ -3,21 +3,21 @@ import { Image, ImageSourcePropType } from "react-native";
 import { SvgProps } from "react-native-svg";
 
 interface CustomIconProps {
-  source: ImageSourcePropType | React.FC<SvgProps>;
+  source: ImageSourcePropType | React.ComponentType<SvgProps>;
   size?: number;
   style?: any;
   color?: string;
 }
 
-export const CustomIcon: React.FC<CustomIconProps> = ({
+export const CustomIcon = ({
   source,
   size = 24,
   style,
   color,
-}) => {
+}: CustomIconProps) => {
   // SVG 컴포넌트인지 확인
   if (typeof source === "function") {
-    const SvgComponent = source as React.FC<SvgProps>;
+    const SvgComponent = source as React.ComponentType<SvgProps>;
     return (
       <SvgComponent
         width={size}

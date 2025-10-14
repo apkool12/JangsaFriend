@@ -33,7 +33,8 @@ const ScrollContainer = styled.ScrollView`
 const MainFeaturesContainer = styled.View`
   flex-direction: row;
   justify-content: center;
-  padding-horizontal: ${(props: ThemedProps) => props.theme.spacing.lg}px;
+  padding-left: ${(props: ThemedProps) => props.theme.spacing.lg}px;
+  padding-right: ${(props: ThemedProps) => props.theme.spacing.lg}px;
   margin-bottom: ${(props: ThemedProps) => props.theme.spacing.xl}px;
 `;
 
@@ -41,7 +42,8 @@ const SectionTitle = styled.Text`
   font-size: ${(props: ThemedProps) => props.theme.fontSize.lg}px;
   font-weight: ${(props: ThemedProps) => props.theme.fontWeight.bold};
   color: ${(props: ThemedProps) => props.theme.colors.text};
-  margin-horizontal: ${(props: ThemedProps) => props.theme.spacing.lg}px;
+  margin-left: ${(props: ThemedProps) => props.theme.spacing.lg}px;
+  margin-right: ${(props: ThemedProps) => props.theme.spacing.lg}px;
   margin-bottom: ${(props: ThemedProps) => props.theme.spacing.md}px;
 `;
 
@@ -69,11 +71,12 @@ const MetricsContainer = styled.View`
 `;
 
 const UpdatesContainer = styled.View`
-  padding-horizontal: ${(props: ThemedProps) => props.theme.spacing.lg}px;
+  padding-left: ${(props: ThemedProps) => props.theme.spacing.lg}px;
+  padding-right: ${(props: ThemedProps) => props.theme.spacing.lg}px;
   margin-bottom: ${(props: ThemedProps) => props.theme.spacing.xxl}px;
 `;
 
-const HomeScreen: React.FC = () => {
+const HomeScreen = () => {
   const handleIconPress = (feature: string) => {
     console.log(`${feature} 버튼이 클릭되었습니다!`);
   };
