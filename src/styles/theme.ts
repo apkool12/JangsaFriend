@@ -2,9 +2,9 @@ export const theme = {
   colors: {
     primary: "#FFD700",
     secondary: "#FFA500",
-    background: "#FFFFFF",
-    surface: "#F8F8F8",
-    cardBackground: "#F5F5F5",
+    background: "#FAF6F9",
+    surface: "#FFFFFF",
+    cardBackground: "#FFFFFF",
     text: "#1A1A1A",
     textSecondary: "#666666",
     textTertiary: "#999999",
