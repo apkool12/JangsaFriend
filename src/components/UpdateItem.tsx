@@ -24,7 +24,7 @@ const IconContainer = styled.View`
   width: 40px;
   height: 40px;
   border-radius: 20px;
-  background-color: ${(props: ThemedProps) => props.theme.colors.accent};
+  background-color: ${(props: ThemedProps) => props.theme.colors.background};
   align-items: center;
   justify-content: center;
   margin-right: ${(props: ThemedProps) => props.theme.spacing.md}px;
