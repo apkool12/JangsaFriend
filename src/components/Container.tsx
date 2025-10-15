@@ -17,6 +17,7 @@ export const Title = styled.Text`
   font-size: ${(props: ThemedProps) => props.theme.fontSize.xl}px;
   font-weight: ${(props: ThemedProps) => props.theme.fontWeight.bold};
   color: ${(props: ThemedProps) => props.theme.colors.text};
+  margin-top: ${(props: ThemedProps) => props.theme.spacing.md}px;
   margin-bottom: ${(props: ThemedProps) => props.theme.spacing.md}px;
 `;
 

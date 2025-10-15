@@ -11,7 +11,6 @@ const CardContainer = styled.View`
     props.theme.colors.cardBackground};
   border-radius: ${(props: ThemedProps) => props.theme.borderRadius.lg}px;
   padding: ${(props: ThemedProps) => props.theme.spacing.lg}px;
-  margin-top: ${(props: ThemedProps) => props.theme.spacing.sm}px;
   margin-bottom: ${(props: ThemedProps) => props.theme.spacing.sm}px;
 `;
 

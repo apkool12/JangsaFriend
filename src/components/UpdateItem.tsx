@@ -16,8 +16,8 @@ const UpdateContainer = styled.View`
   background-color: ${(props: ThemedProps) =>
     props.theme.colors.cardBackground};
   border-radius: ${(props: ThemedProps) => props.theme.borderRadius.lg}px;
-  margin-top: ${(props: ThemedProps) => props.theme.spacing.sm}px;
-  margin-bottom: ${(props: ThemedProps) => props.theme.spacing.sm}px;
+  margin-top: ${(props: ThemedProps) => props.theme.spacing.xs}px;
+  margin-bottom: ${(props: ThemedProps) => props.theme.spacing.xs}px;
 `;
 
 const IconContainer = styled.View`

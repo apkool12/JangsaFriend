@@ -36,7 +36,7 @@ const MainFeaturesContainer = styled.View`
   padding-left: ${(props: ThemedProps) => props.theme.spacing.lg}px;
   padding-right: ${(props: ThemedProps) => props.theme.spacing.lg}px;
   margin-top: ${(props: ThemedProps) => props.theme.spacing.xl}px;
-  margin-bottom: ${(props: ThemedProps) => props.theme.spacing.xl}px;
+  margin-bottom: ${(props: ThemedProps) => props.theme.spacing.md}px;
 `;
 
 const SectionTitle = styled.Text`
@@ -46,6 +46,7 @@ const SectionTitle = styled.Text`
   color: ${(props: ThemedProps) => props.theme.colors.text};
   margin-left: ${(props: ThemedProps) => props.theme.spacing.lg}px;
   margin-right: ${(props: ThemedProps) => props.theme.spacing.lg}px;
+  margin-top: ${(props: ThemedProps) => props.theme.spacing.md}px;
   margin-bottom: ${(props: ThemedProps) => props.theme.spacing.md}px;
 `;
 
@@ -133,7 +134,7 @@ const HomeScreen = () => {
               label="마케팅 비용"
               showDivider={true}
             />
-            <MetricItem value="708%" label="마케팅 ROI" color="#FF3B30" />
+            <MetricItem value="708%" label="마케팅 ROI" color="#FF8787" />
           </MetricsContainer>
         </Card>
 
