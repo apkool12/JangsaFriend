@@ -19,7 +19,7 @@ import SettingIcon from "../../assets/navbar/setting.svg";
 
 const Tab = createBottomTabNavigator();
 
-const BottomTabNavigator: React.FC = () => {
+const BottomTabNavigator = () => {
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
