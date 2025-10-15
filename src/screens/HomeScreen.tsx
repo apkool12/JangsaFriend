@@ -35,6 +35,7 @@ const MainFeaturesContainer = styled.View`
   justify-content: center;
   padding-left: ${(props: ThemedProps) => props.theme.spacing.lg}px;
   padding-right: ${(props: ThemedProps) => props.theme.spacing.lg}px;
+  margin-top: ${(props: ThemedProps) => props.theme.spacing.xl}px;
   margin-bottom: ${(props: ThemedProps) => props.theme.spacing.xl}px;
 `;
 
@@ -67,10 +68,16 @@ const BusinessType = styled.Text`
   color: ${(props: ThemedProps) => props.theme.colors.textSecondary};
 `;
 
+const Divider = styled.View`
+  height: 1px;
+  background-color: ${(props: ThemedProps) => props.theme.colors.border};
+  margin-top: ${(props: ThemedProps) => props.theme.spacing.md}px;
+  margin-bottom: ${(props: ThemedProps) => props.theme.spacing.md}px;
+`;
+
 const MetricsContainer = styled.View`
   flex-direction: row;
   align-items: center;
-  margin-top: ${(props: ThemedProps) => props.theme.spacing.md}px;
 `;
 
 const UpdatesContainer = styled.View`
@@ -116,6 +123,8 @@ const HomeScreen = () => {
             <BusinessName>커피천국</BusinessName>
             <BusinessType>카페 | 대전시 유성구</BusinessType>
           </BusinessInfoContainer>
+
+          <Divider />
 
           <MetricsContainer>
             <MetricItem value="850만원" label="전월 매출" showDivider={true} />
