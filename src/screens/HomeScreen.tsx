@@ -90,9 +90,8 @@ const HomeScreen = () => {
 
   return (
     <Container>
+      <Header />
       <ScrollContainer showsVerticalScrollIndicator={false}>
-        <Header />
-
         <MainFeaturesContainer>
           <IconButton
             iconSource={require("../../assets/3dicon/chart.png")}

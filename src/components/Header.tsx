@@ -8,47 +8,46 @@ interface ThemedProps {
 }
 
 const HeaderContainer = styled.View`
-  align-items: center;
-  padding-top: ${(props: ThemedProps) => props.theme.spacing.xl}px;
-  padding-bottom: ${(props: ThemedProps) => props.theme.spacing.xl}px;
+  width: 402px;
+  height: 112px;
+  background-color: #fff;
+  align-items: flex-start;
+  align-self: center;
+  flex-shrink: 0;
   padding-left: ${(props: ThemedProps) => props.theme.spacing.lg}px;
-  padding-right: ${(props: ThemedProps) => props.theme.spacing.lg}px;
+  padding-top: 60px;
 `;
 
 const LogoContainer = styled.View`
-  flex-direction: row;
-  align-items: center;
-  margin-bottom: ${(props: ThemedProps) => props.theme.spacing.sm}px;
+  align-items: flex-start;
+  justify-content: center;
 `;
 
 const LogoIcon = styled.View`
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
-  background-color: ${(props: ThemedProps) => props.theme.colors.brand};
+  width: 126px;
+  height: 42px;
   align-items: center;
   justify-content: center;
-  margin-right: ${(props: ThemedProps) => props.theme.spacing.sm}px;
-`;
-
-const BrandText = styled.Text`
-  font-family: ${(props: ThemedProps) => props.theme.fontFamily.system};
-  font-size: ${(props: ThemedProps) => props.theme.fontSize.xl}px;
-  font-weight: ${(props: ThemedProps) => props.theme.fontWeight.bold};
-  color: ${(props: ThemedProps) => props.theme.colors.brand};
 `;
 
 export const Header = () => {
   return (
-    <HeaderContainer>
+    <HeaderContainer
+      style={{
+        shadowColor: "#000",
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.03,
+        shadowRadius: 1,
+        elevation: 2,
+      }}
+    >
       <LogoContainer>
         <LogoIcon>
           <CustomIcon
             source={require("../../assets/icon/icon.png")}
-            size={20}
+            size={126}
           />
         </LogoIcon>
-        <BrandText>장사친구</BrandText>
       </LogoContainer>
     </HeaderContainer>
   );
