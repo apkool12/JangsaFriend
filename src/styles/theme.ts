@@ -9,7 +9,7 @@ export const theme = {
     textSecondary: "#666666",
     textTertiary: "#999999",
     brand: "#8B4513",
-    accent: "#FFD700",
+    accent: "#FED44E",
     error: "#FF3B30",
     success: "#34C759",
     warning: "#FF9500",

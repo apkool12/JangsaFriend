@@ -11,11 +11,11 @@ interface ThemedProps {
 
 const FABContainer = styled.TouchableOpacity`
   position: absolute;
-  bottom: 100px;
+  bottom: 25px;
   right: 20px;
-  width: 56px;
-  height: 56px;
-  border-radius: 28px;
+  width: 72px;
+  height: 72px;
+  border-radius: 50px;
   background-color: ${(props: ThemedProps) => props.theme.colors.accent};
   align-items: center;
   justify-content: center;
@@ -35,13 +35,13 @@ export const FloatingActionButton = ({
       onPress={onPress}
       style={{
         shadowColor: "#000",
-        shadowOffset: { width: 0, height: 4 },
+        shadowOffset: { width: 0, height: 0 },
         shadowOpacity: 0.2,
-        shadowRadius: 8,
-        elevation: 8,
+        shadowRadius: 2,
+        elevation: 2,
       }}
     >
-      <CustomIcon source={iconSource} size={24} color="#FFFFFF" />
+      <CustomIcon source={iconSource} size={42} color="#FFFFFF" />
     </FABContainer>
   );
 };
