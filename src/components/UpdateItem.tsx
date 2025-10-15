@@ -39,6 +39,7 @@ const ContentContainer = styled.View`
 `;
 
 const UpdateTitle = styled.Text`
+  font-family: ${(props: ThemedProps) => props.theme.fontFamily.system};
   font-size: ${(props: ThemedProps) => props.theme.fontSize.md}px;
   font-weight: ${(props: ThemedProps) => props.theme.fontWeight.semibold};
   color: ${(props: ThemedProps) => props.theme.colors.text};
@@ -46,6 +47,7 @@ const UpdateTitle = styled.Text`
 `;
 
 const UpdateDescription = styled.Text`
+  font-family: ${(props: ThemedProps) => props.theme.fontFamily.system};
   font-size: ${(props: ThemedProps) => props.theme.fontSize.sm}px;
   font-weight: ${(props: ThemedProps) => props.theme.fontWeight.regular};
   color: ${(props: ThemedProps) => props.theme.colors.textSecondary};

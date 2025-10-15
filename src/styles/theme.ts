@@ -41,6 +41,9 @@ export const theme = {
     xl: 24,
     xxl: 32,
   },
+  fontFamily: {
+    system: "Apple SD Gothic Neo",
+  },
   fontWeight: {
     regular: "400" as const,
     medium: "500" as const,

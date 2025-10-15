@@ -15,6 +15,7 @@ const Container = styled.View`
 `;
 
 const Title = styled.Text`
+  font-family: ${(props: ThemedProps) => props.theme.fontFamily.system};
   font-size: ${(props: ThemedProps) => props.theme.fontSize.xl}px;
   font-weight: ${(props: ThemedProps) => props.theme.fontWeight.bold};
   color: ${(props: ThemedProps) => props.theme.colors.text};
@@ -22,6 +23,7 @@ const Title = styled.Text`
 `;
 
 const Subtitle = styled.Text`
+  font-family: ${(props: ThemedProps) => props.theme.fontFamily.system};
   font-size: ${(props: ThemedProps) => props.theme.fontSize.md}px;
   font-weight: ${(props: ThemedProps) => props.theme.fontWeight.regular};
   color: ${(props: ThemedProps) => props.theme.colors.textSecondary};

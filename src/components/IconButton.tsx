@@ -21,6 +21,7 @@ const IconButtonContainer = styled.TouchableOpacity`
 `;
 
 const IconLabel = styled.Text`
+  font-family: ${(props: ThemedProps) => props.theme.fontFamily.system};
   font-size: ${(props: ThemedProps) => props.theme.fontSize.sm}px;
   font-weight: ${(props: ThemedProps) => props.theme.fontWeight.medium};
   color: ${(props: ThemedProps) => props.theme.colors.text};

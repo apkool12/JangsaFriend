@@ -1,4 +1,5 @@
 import React from "react";
+import { Text } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { DefaultTheme } from "styled-components/native";
 import { CustomIcon } from "../components/CustomIcon";
@@ -23,7 +24,7 @@ const BottomTabNavigator: React.FC = () => {
     <Tab.Navigator
       screenOptions={({ route }) => ({
         tabBarIcon: ({ focused, color, size }) => {
-          let iconSource;
+          let iconSource = HomeIcon;
 
           if (route.name === "Home") {
             iconSource = HomeIcon;
@@ -39,19 +40,19 @@ const BottomTabNavigator: React.FC = () => {
 
           return <CustomIcon source={iconSource} size={size} color={color} />;
         },
-        tabBarActiveTintColor: "#1A1A1A",
-        tabBarInactiveTintColor: "#666666",
+        tabBarActiveTintColor: "#1B1B1B",
+        tabBarInactiveTintColor: "#B0B0B0",
         tabBarStyle: {
           backgroundColor: "#FFFFFF",
           borderTopWidth: 1,
           borderTopColor: "#F0F0F0",
           paddingBottom: 5,
           paddingTop: 5,
-          height: 60,
+          height: 90,
         },
         tabBarLabelStyle: {
           fontSize: 12,
-          fontWeight: "500",
+          fontFamily: "Apple SD Gothic Neo",
         },
         headerShown: false,
       })}
@@ -60,35 +61,90 @@ const BottomTabNavigator: React.FC = () => {
         name="Home"
         component={HomeScreen}
         options={{
-          tabBarLabel: "홈",
+          tabBarLabel: ({ focused, color }) => (
+            <Text
+              style={{
+                fontSize: 12,
+                fontFamily: "Apple SD Gothic Neo",
+                fontWeight: focused ? "600" : "400",
+                color: color,
+              }}
+            >
+              홈
+            </Text>
+          ),
         }}
       />
       <Tab.Screen
         name="Analysis"
         component={AnalysisScreen}
         options={{
-          tabBarLabel: "분석",
+          tabBarLabel: ({ focused, color }) => (
+            <Text
+              style={{
+                fontSize: 12,
+                fontFamily: "Apple SD Gothic Neo",
+                fontWeight: focused ? "600" : "400",
+                color: color,
+              }}
+            >
+              분석
+            </Text>
+          ),
         }}
       />
       <Tab.Screen
         name="Education"
         component={EducationScreen}
         options={{
-          tabBarLabel: "교육",
+          tabBarLabel: ({ focused, color }) => (
+            <Text
+              style={{
+                fontSize: 12,
+                fontFamily: "Apple SD Gothic Neo",
+                fontWeight: focused ? "600" : "400",
+                color: color,
+              }}
+            >
+              교육
+            </Text>
+          ),
         }}
       />
       <Tab.Screen
         name="Community"
         component={CommunityScreen}
         options={{
-          tabBarLabel: "커뮤니티",
+          tabBarLabel: ({ focused, color }) => (
+            <Text
+              style={{
+                fontSize: 12,
+                fontFamily: "Apple SD Gothic Neo",
+                fontWeight: focused ? "600" : "400",
+                color: color,
+              }}
+            >
+              커뮤니티
+            </Text>
+          ),
         }}
       />
       <Tab.Screen
         name="Settings"
         component={SettingsScreen}
         options={{
-          tabBarLabel: "설정",
+          tabBarLabel: ({ focused, color }) => (
+            <Text
+              style={{
+                fontSize: 12,
+                fontFamily: "Apple SD Gothic Neo",
+                fontWeight: focused ? "600" : "400",
+                color: color,
+              }}
+            >
+              설정
+            </Text>
+          ),
         }}
       />
     </Tab.Navigator>

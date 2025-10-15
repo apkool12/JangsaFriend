@@ -30,6 +30,7 @@ const LogoIcon = styled.View`
 `;
 
 const BrandText = styled.Text`
+  font-family: ${(props: ThemedProps) => props.theme.fontFamily.system};
   font-size: ${(props: ThemedProps) => props.theme.fontSize.xl}px;
   font-weight: ${(props: ThemedProps) => props.theme.fontWeight.bold};
   color: ${(props: ThemedProps) => props.theme.colors.brand};

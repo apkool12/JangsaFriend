@@ -39,6 +39,7 @@ const MainFeaturesContainer = styled.View`
 `;
 
 const SectionTitle = styled.Text`
+  font-family: ${(props: ThemedProps) => props.theme.fontFamily.system};
   font-size: ${(props: ThemedProps) => props.theme.fontSize.lg}px;
   font-weight: ${(props: ThemedProps) => props.theme.fontWeight.bold};
   color: ${(props: ThemedProps) => props.theme.colors.text};
@@ -52,6 +53,7 @@ const BusinessInfoContainer = styled.View`
 `;
 
 const BusinessName = styled.Text`
+  font-family: ${(props: ThemedProps) => props.theme.fontFamily.system};
   font-size: ${(props: ThemedProps) => props.theme.fontSize.lg}px;
   font-weight: ${(props: ThemedProps) => props.theme.fontWeight.bold};
   color: ${(props: ThemedProps) => props.theme.colors.text};
@@ -59,6 +61,7 @@ const BusinessName = styled.Text`
 `;
 
 const BusinessType = styled.Text`
+  font-family: ${(props: ThemedProps) => props.theme.fontFamily.system};
   font-size: ${(props: ThemedProps) => props.theme.fontSize.sm}px;
   font-weight: ${(props: ThemedProps) => props.theme.fontWeight.regular};
   color: ${(props: ThemedProps) => props.theme.colors.textSecondary};
