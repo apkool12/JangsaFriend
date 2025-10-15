@@ -11,12 +11,8 @@ const CardContainer = styled.View`
     props.theme.colors.cardBackground};
   border-radius: ${(props: ThemedProps) => props.theme.borderRadius.lg}px;
   padding: ${(props: ThemedProps) => props.theme.spacing.lg}px;
-  margin-vertical: ${(props: ThemedProps) => props.theme.spacing.sm}px;
-  shadow-color: #000;
-  shadow-offset: 0px 2px;
-  shadow-opacity: 0.1;
-  shadow-radius: 4px;
-  elevation: 3;
+  margin-top: ${(props: ThemedProps) => props.theme.spacing.sm}px;
+  margin-bottom: ${(props: ThemedProps) => props.theme.spacing.sm}px;
 `;
 
 interface CardProps {
@@ -24,6 +20,21 @@ interface CardProps {
   style?: any;
 }
 
-export const Card: React.FC<CardProps> = ({ children, style }) => {
-  return <CardContainer style={style}>{children}</CardContainer>;
+export const Card = ({ children, style }: CardProps) => {
+  return (
+    <CardContainer
+      style={[
+        {
+          shadowColor: "#000",
+          shadowOffset: { width: 0, height: 2 },
+          shadowOpacity: 0.1,
+          shadowRadius: 4,
+          elevation: 3,
+        },
+        style,
+      ]}
+    >
+      {children}
+    </CardContainer>
+  );
 };

@@ -16,12 +16,8 @@ const UpdateContainer = styled.View`
   background-color: ${(props: ThemedProps) =>
     props.theme.colors.cardBackground};
   border-radius: ${(props: ThemedProps) => props.theme.borderRadius.lg}px;
-  margin-vertical: ${(props: ThemedProps) => props.theme.spacing.sm}px;
-  shadow-color: #000;
-  shadow-offset: 0px 2px;
-  shadow-opacity: 0.1;
-  shadow-radius: 4px;
-  elevation: 3;
+  margin-top: ${(props: ThemedProps) => props.theme.spacing.sm}px;
+  margin-bottom: ${(props: ThemedProps) => props.theme.spacing.sm}px;
 `;
 
 const IconContainer = styled.View`
@@ -55,18 +51,26 @@ const UpdateDescription = styled.Text`
 `;
 
 interface UpdateItemProps {
-  iconSource: ImageSourcePropType | React.FC<SvgProps>;
+  iconSource: ImageSourcePropType | React.ComponentType<SvgProps>;
   title: string;
   description: string;
 }
 
-export const UpdateItem: React.FC<UpdateItemProps> = ({
+export const UpdateItem = ({
   iconSource,
   title,
   description,
-}) => {
+}: UpdateItemProps) => {
   return (
-    <UpdateContainer>
+    <UpdateContainer
+      style={{
+        shadowColor: "#000",
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.1,
+        shadowRadius: 4,
+        elevation: 3,
+      }}
+    >
       <IconContainer>
         <CustomIcon source={iconSource} size={20} color="#FFFFFF" />
       </IconContainer>

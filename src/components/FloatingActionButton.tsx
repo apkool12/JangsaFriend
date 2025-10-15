@@ -19,24 +19,28 @@ const FABContainer = styled.TouchableOpacity`
   background-color: ${(props: ThemedProps) => props.theme.colors.accent};
   align-items: center;
   justify-content: center;
-  shadow-color: #000;
-  shadow-offset: 0px 4px;
-  shadow-opacity: 0.2;
-  shadow-radius: 8px;
-  elevation: 8;
 `;
 
 interface FloatingActionButtonProps {
-  iconSource: ImageSourcePropType | React.FC<SvgProps>;
+  iconSource: ImageSourcePropType | React.ComponentType<SvgProps>;
   onPress?: () => void;
 }
 
-export const FloatingActionButton: React.FC<FloatingActionButtonProps> = ({
+export const FloatingActionButton = ({
   iconSource,
   onPress,
-}) => {
+}: FloatingActionButtonProps) => {
   return (
-    <FABContainer onPress={onPress}>
+    <FABContainer
+      onPress={onPress}
+      style={{
+        shadowColor: "#000",
+        shadowOffset: { width: 0, height: 4 },
+        shadowOpacity: 0.2,
+        shadowRadius: 8,
+        elevation: 8,
+      }}
+    >
       <CustomIcon source={iconSource} size={24} color="#FFFFFF" />
     </FABContainer>
   );

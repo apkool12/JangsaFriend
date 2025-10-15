@@ -9,7 +9,8 @@ interface ThemedProps {
 const MetricContainer = styled.View`
   flex: 1;
   align-items: center;
-  padding-vertical: ${(props: ThemedProps) => props.theme.spacing.md}px;
+  padding-top: ${(props: ThemedProps) => props.theme.spacing.md}px;
+  padding-bottom: ${(props: ThemedProps) => props.theme.spacing.md}px;
 `;
 
 const MetricValue = styled.Text`
@@ -42,12 +43,12 @@ interface MetricItemProps {
   showDivider?: boolean;
 }
 
-export const MetricItem: React.FC<MetricItemProps> = ({
+export const MetricItem = ({
   value,
   label,
   color,
   showDivider = false,
-}) => {
+}: MetricItemProps) => {
   return (
     <>
       <MetricContainer>

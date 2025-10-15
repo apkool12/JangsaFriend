@@ -9,8 +9,10 @@ interface ThemedProps {
 
 const HeaderContainer = styled.View`
   align-items: center;
-  padding-vertical: ${(props: ThemedProps) => props.theme.spacing.xl}px;
-  padding-horizontal: ${(props: ThemedProps) => props.theme.spacing.lg}px;
+  padding-top: ${(props: ThemedProps) => props.theme.spacing.xl}px;
+  padding-bottom: ${(props: ThemedProps) => props.theme.spacing.xl}px;
+  padding-left: ${(props: ThemedProps) => props.theme.spacing.lg}px;
+  padding-right: ${(props: ThemedProps) => props.theme.spacing.lg}px;
 `;
 
 const LogoContainer = styled.View`
@@ -36,7 +38,7 @@ const BrandText = styled.Text`
   color: ${(props: ThemedProps) => props.theme.colors.brand};
 `;
 
-export const Header: React.FC = () => {
+export const Header = () => {
   return (
     <HeaderContainer>
       <LogoContainer>
