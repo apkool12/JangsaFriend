@@ -14,6 +14,7 @@ export const theme = {
     success: "#34C759",
     warning: "#FF9500",
     info: "#5AC8FA",
+    border: "#E5E5E5",
     chartRed: "#FF6B6B",
     chartYellow: "#FFD93D",
     chartTeal: "#6BCF7F",
