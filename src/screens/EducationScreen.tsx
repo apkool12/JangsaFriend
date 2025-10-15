@@ -31,7 +31,7 @@ const Subtitle = styled.Text`
   margin-top: ${(props: ThemedProps) => props.theme.spacing.md}px;
 `;
 
-const EducationScreen: React.FC = () => {
+const EducationScreen = () => {
   return (
     <Container>
       <Title>교육</Title>

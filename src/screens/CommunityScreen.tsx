@@ -31,7 +31,7 @@ const Subtitle = styled.Text`
   margin-top: ${(props: ThemedProps) => props.theme.spacing.md}px;
 `;
 
-const CommunityScreen: React.FC = () => {
+const CommunityScreen = () => {
   return (
     <Container>
       <Title>커뮤니티</Title>

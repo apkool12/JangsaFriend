@@ -31,7 +31,7 @@ const Subtitle = styled.Text`
   margin-top: ${(props: ThemedProps) => props.theme.spacing.md}px;
 `;
 
-const AnalysisScreen: React.FC = () => {
+const AnalysisScreen = () => {
   return (
     <Container>
       <Title>분석</Title>
