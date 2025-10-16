@@ -9,6 +9,12 @@ interface ThemedProps {
   theme: DefaultTheme;
 }
 
+const IconButtonWrapper = styled.View`
+  align-items: center;
+  margin-left: ${(props: ThemedProps) => props.theme.spacing.sm}px;
+  margin-right: ${(props: ThemedProps) => props.theme.spacing.sm}px;
+`;
+
 const IconButtonContainer = styled.TouchableOpacity`
   align-items: center;
   justify-content: center;
@@ -16,14 +22,12 @@ const IconButtonContainer = styled.TouchableOpacity`
   height: 80px;
   border-radius: 40px;
   background-color: ${(props: ThemedProps) => props.theme.colors.surface};
-  margin-left: ${(props: ThemedProps) => props.theme.spacing.sm}px;
-  margin-right: ${(props: ThemedProps) => props.theme.spacing.sm}px;
 `;
 
 const IconLabel = styled.Text`
   font-family: ${(props: ThemedProps) => props.theme.fontFamily.system};
   font-size: ${(props: ThemedProps) => props.theme.fontSize.sm}px;
-  font-weight: ${(props: ThemedProps) => props.theme.fontWeight.medium};
+  font-weight: ${(props: ThemedProps) => props.theme.fontWeight.bold};
   color: ${(props: ThemedProps) => props.theme.colors.text};
   margin-top: ${(props: ThemedProps) => props.theme.spacing.sm}px;
   text-align: center;
@@ -37,9 +41,11 @@ interface IconButtonProps {
 
 export const IconButton = ({ iconSource, label, onPress }: IconButtonProps) => {
   return (
-    <IconButtonContainer onPress={onPress}>
-      <CustomIcon source={iconSource} size={32} />
+    <IconButtonWrapper>
+      <IconButtonContainer onPress={onPress}>
+        <CustomIcon source={iconSource} size={45} />
+      </IconButtonContainer>
       <IconLabel>{label}</IconLabel>
-    </IconButtonContainer>
+    </IconButtonWrapper>
   );
 };
