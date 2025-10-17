@@ -51,6 +51,7 @@ const SectionTitle = styled.Text`
 `;
 
 const BusinessInfoContainer = styled.View`
+  margin-left: ${(props: ThemedProps) => props.theme.spacing.sm}px;
   margin-bottom: ${(props: ThemedProps) => props.theme.spacing.md}px;
 `;
 
@@ -72,8 +73,6 @@ const BusinessType = styled.Text`
 const Divider = styled.View`
   height: 1px;
   background-color: ${(props: ThemedProps) => props.theme.colors.border};
-  margin-top: ${(props: ThemedProps) => props.theme.spacing.md}px;
-  margin-bottom: ${(props: ThemedProps) => props.theme.spacing.md}px;
 `;
 
 const MetricsContainer = styled.View`
