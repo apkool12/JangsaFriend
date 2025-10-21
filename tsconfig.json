@@ -3,6 +3,11 @@
   "compilerOptions": {
     "strict": true,
     "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react-jsx",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
     "types": ["styled-components-react-native"]
   },
   "include": [
@@ -10,5 +15,6 @@
     "**/*.tsx",
     "src/styles/styled.d.ts",
     "src/types/svg.d.ts"
-  ]
+  ],
+  "exclude": ["node_modules", "babel.config.js", "metro.config.js"]
 }
