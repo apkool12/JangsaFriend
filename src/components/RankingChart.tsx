@@ -179,9 +179,12 @@ export const RankingChart = ({ data }: RankingChartProps) => {
           verticalLabelRotation={0}
           showValuesOnTopOfBars={false}
           fromZero
+          yAxisLabel=""
+          yAxisSuffix=""
           style={{
             borderRadius: 12,
-            marginVertical: 8,
+            marginTop: 8,
+            marginBottom: 8,
           }}
         />
       </View>
