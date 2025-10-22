@@ -10,8 +10,10 @@ const TabContainer = styled.View`
   flex-direction: row;
   background-color: ${(props: ThemedProps) => props.theme.colors.surface};
   border-radius: ${(props: ThemedProps) => props.theme.borderRadius.md}px;
-  margin-horizontal: ${(props: ThemedProps) => props.theme.spacing.lg}px;
-  margin-vertical: ${(props: ThemedProps) => props.theme.spacing.md}px;
+  margin-left: ${(props: ThemedProps) => props.theme.spacing.lg}px;
+  margin-right: ${(props: ThemedProps) => props.theme.spacing.lg}px;
+  margin-top: ${(props: ThemedProps) => props.theme.spacing.md}px;
+  margin-bottom: ${(props: ThemedProps) => props.theme.spacing.md}px;
   padding: 4px;
 `;
 

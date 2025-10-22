@@ -75,7 +75,8 @@ const ChipsContainer = styled.View`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  margin-vertical: ${(props: ThemedProps) => props.theme.spacing.md}px;
+  margin-top: ${(props: ThemedProps) => props.theme.spacing.md}px;
+  margin-bottom: ${(props: ThemedProps) => props.theme.spacing.md}px;
 `;
 
 const SectionTitle = styled.Text`

@@ -14,7 +14,8 @@ const CardContainer = styled.View`
   padding: ${(props: ThemedProps) => props.theme.spacing.md}px;
   margin-bottom: ${(props: ThemedProps) => props.theme.spacing.sm}px;
   flex: 1;
-  margin-horizontal: ${(props: ThemedProps) => props.theme.spacing.xs}px;
+  margin-left: ${(props: ThemedProps) => props.theme.spacing.xs}px;
+  margin-right: ${(props: ThemedProps) => props.theme.spacing.xs}px;
 `;
 
 const Header = styled.View`

@@ -13,8 +13,10 @@ const ChartContainer = styled.View`
   background-color: ${(props: ThemedProps) => props.theme.colors.surface};
   border-radius: ${(props: ThemedProps) => props.theme.borderRadius.md}px;
   padding: ${(props: ThemedProps) => props.theme.spacing.md}px;
-  margin-vertical: ${(props: ThemedProps) => props.theme.spacing.sm}px;
-  margin-horizontal: ${(props: ThemedProps) => props.theme.spacing.sm}px;
+  margin-top: ${(props: ThemedProps) => props.theme.spacing.sm}px;
+  margin-bottom: ${(props: ThemedProps) => props.theme.spacing.sm}px;
+  margin-left: ${(props: ThemedProps) => props.theme.spacing.sm}px;
+  margin-right: ${(props: ThemedProps) => props.theme.spacing.sm}px;
   shadow-color: #000;
   shadow-offset: 0px 2px;
   shadow-opacity: 0.1;
@@ -40,7 +42,8 @@ const LegendContainer = styled.View`
 const LegendItem = styled.View`
   flex-direction: row;
   align-items: center;
-  margin-horizontal: ${(props: ThemedProps) => props.theme.spacing.sm}px;
+  margin-left: ${(props: ThemedProps) => props.theme.spacing.sm}px;
+  margin-right: ${(props: ThemedProps) => props.theme.spacing.sm}px;
 `;
 
 const LegendColor = styled.View<{ color: string }>`
