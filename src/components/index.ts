@@ -15,3 +15,4 @@ export { RankingChart } from "./RankingChart";
 export { TrendChart } from "./TrendChart";
 export { KeywordChips } from "./KeywordChip";
 export { ReviewChart } from "./ReviewChart";
+export { ChatBotModal } from "./ChatBotModal";

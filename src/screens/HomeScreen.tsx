@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { ScrollView, View, Text, TouchableOpacity } from "react-native";
 import styled from "styled-components/native";
 import { DefaultTheme } from "styled-components/native";
@@ -9,6 +9,7 @@ import {
   MetricItem,
   UpdateItem,
   FloatingActionButton,
+  ChatBotModal,
 } from "../components";
 
 // SVG 아이콘들 import
@@ -87,12 +88,14 @@ const UpdatesContainer = styled.View`
 `;
 
 const HomeScreen = () => {
+  const [isChatModalVisible, setIsChatModalVisible] = useState(false);
+
   const handleIconPress = (feature: string) => {
     console.log(`${feature} 버튼이 클릭되었습니다!`);
   };
 
   const handleChatPress = () => {
-    console.log("챗봇 버튼이 클릭되었습니다!");
+    setIsChatModalVisible(true);
   };
 
   return (
@@ -160,6 +163,11 @@ const HomeScreen = () => {
       <FloatingActionButton
         iconSource={ChatBotIcon}
         onPress={handleChatPress}
+      />
+
+      <ChatBotModal
+        visible={isChatModalVisible}
+        onClose={() => setIsChatModalVisible(false)}
       />
     </Container>
   );
