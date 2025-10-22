@@ -49,7 +49,7 @@ const LegendItem = styled.View`
 const LegendColor = styled.View<{ color: string } & ThemedProps>`
   width: 12px;
   height: 12px;
-  background-color: ${(props) => props.color};
+  background-color: ${(props: { color: string }) => props.color};
   border-radius: 2px;
   margin-right: 4px;
 `;
@@ -94,11 +94,11 @@ const RankingText = styled.Text<{ color: string } & ThemedProps>`
   font-family: ${(props: ThemedProps) => props.theme.fontFamily.system};
   font-size: ${(props: ThemedProps) => props.theme.fontSize.xs}px;
   font-weight: ${(props: ThemedProps) => props.theme.fontWeight.bold};
-  color: ${(props) => props.color};
+  color: ${(props: { color: string }) => props.color};
   margin-left: ${(props: ThemedProps) => props.theme.spacing.xs}px;
   min-width: 25px;
   text-align: center;
-  background-color: ${(props) => props.color}20;
+  background-color: ${(props: { color: string }) => props.color}20;
   padding-left: 4px;
   padding-right: 4px;
   padding-top: 2px;

@@ -24,7 +24,7 @@ const TabButton = styled.TouchableOpacity<{ isActive: boolean } & ThemedProps>`
   padding-left: ${(props: ThemedProps) => props.theme.spacing.md}px;
   padding-right: ${(props: ThemedProps) => props.theme.spacing.md}px;
   border-radius: ${(props: ThemedProps) => props.theme.borderRadius.sm}px;
-  background-color: ${(props) =>
+  background-color: ${(props: { isActive: boolean } & ThemedProps) =>
     props.isActive ? props.theme.colors.primary : "transparent"};
   align-items: center;
 `;
@@ -32,11 +32,11 @@ const TabButton = styled.TouchableOpacity<{ isActive: boolean } & ThemedProps>`
 const TabText = styled.Text<{ isActive: boolean } & ThemedProps>`
   font-family: ${(props: ThemedProps) => props.theme.fontFamily.system};
   font-size: ${(props: ThemedProps) => props.theme.fontSize.md}px;
-  font-weight: ${(props) =>
+  font-weight: ${(props: { isActive: boolean } & ThemedProps) =>
     props.isActive
       ? props.theme.fontWeight.bold
       : props.theme.fontWeight.medium};
-  color: ${(props) =>
+  color: ${(props: { isActive: boolean } & ThemedProps) =>
     props.isActive
       ? props.theme.colors.text
       : props.theme.colors.textSecondary};
