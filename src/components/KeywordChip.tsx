@@ -8,7 +8,7 @@ interface ThemedProps {
   theme: DefaultTheme;
 }
 
-const ChipContainer = styled.View<{ sentiment: string }>`
+const ChipContainer = styled.View<{ sentiment: string } & ThemedProps>`
   background-color: ${(props) => {
     switch (props.sentiment) {
       case "positive":
@@ -40,7 +40,7 @@ const ChipContainer = styled.View<{ sentiment: string }>`
   }};
 `;
 
-const ChipText = styled.Text<{ sentiment: string }>`
+const ChipText = styled.Text<{ sentiment: string } & ThemedProps>`
   font-family: ${(props: ThemedProps) => props.theme.fontFamily.system};
   font-size: ${(props: ThemedProps) => props.theme.fontSize.sm}px;
   font-weight: ${(props: ThemedProps) => props.theme.fontWeight.medium};
@@ -57,7 +57,7 @@ const ChipText = styled.Text<{ sentiment: string }>`
   margin-right: ${(props: ThemedProps) => props.theme.spacing.xs}px;
 `;
 
-const CountText = styled.Text<{ sentiment: string }>`
+const CountText = styled.Text<{ sentiment: string } & ThemedProps>`
   font-family: ${(props: ThemedProps) => props.theme.fontFamily.system};
   font-size: ${(props: ThemedProps) => props.theme.fontSize.xs}px;
   font-weight: ${(props: ThemedProps) => props.theme.fontWeight.bold};

@@ -17,7 +17,7 @@ const TabContainer = styled.View`
   padding: 4px;
 `;
 
-const TabButton = styled.TouchableOpacity<{ isActive: boolean }>`
+const TabButton = styled.TouchableOpacity<{ isActive: boolean } & ThemedProps>`
   flex: 1;
   padding-top: ${(props: ThemedProps) => props.theme.spacing.sm}px;
   padding-bottom: ${(props: ThemedProps) => props.theme.spacing.sm}px;
@@ -29,7 +29,7 @@ const TabButton = styled.TouchableOpacity<{ isActive: boolean }>`
   align-items: center;
 `;
 
-const TabText = styled.Text<{ isActive: boolean }>`
+const TabText = styled.Text<{ isActive: boolean } & ThemedProps>`
   font-family: ${(props: ThemedProps) => props.theme.fontFamily.system};
   font-size: ${(props: ThemedProps) => props.theme.fontSize.md}px;
   font-weight: ${(props) =>

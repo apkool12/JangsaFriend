@@ -74,7 +74,7 @@ const ChangeContainer = styled.View`
   align-items: center;
 `;
 
-const ChangeText = styled.Text<{ isPositive: boolean }>`
+const ChangeText = styled.Text<{ isPositive: boolean } & ThemedProps>`
   font-family: ${(props: ThemedProps) => props.theme.fontFamily.system};
   font-size: ${(props: ThemedProps) => props.theme.fontSize.xs}px;
   font-weight: ${(props: ThemedProps) => props.theme.fontWeight.medium};

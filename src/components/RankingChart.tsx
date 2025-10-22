@@ -46,7 +46,7 @@ const LegendItem = styled.View`
   margin-right: ${(props: ThemedProps) => props.theme.spacing.sm}px;
 `;
 
-const LegendColor = styled.View<{ color: string }>`
+const LegendColor = styled.View<{ color: string } & ThemedProps>`
   width: 12px;
   height: 12px;
   background-color: ${(props) => props.color};
@@ -90,7 +90,7 @@ const RankingContainer = styled.View`
   align-items: center;
 `;
 
-const RankingText = styled.Text<{ color: string }>`
+const RankingText = styled.Text<{ color: string } & ThemedProps>`
   font-family: ${(props: ThemedProps) => props.theme.fontFamily.system};
   font-size: ${(props: ThemedProps) => props.theme.fontSize.xs}px;
   font-weight: ${(props: ThemedProps) => props.theme.fontWeight.bold};

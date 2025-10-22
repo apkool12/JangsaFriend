@@ -46,7 +46,7 @@ const LegendItem = styled.View`
   margin-right: ${(props: ThemedProps) => props.theme.spacing.sm}px;
 `;
 
-const LegendColor = styled.View<{ color: string }>`
+const LegendColor = styled.View<{ color: string } & ThemedProps>`
   width: 12px;
   height: 12px;
   background-color: ${(props) => props.color};
