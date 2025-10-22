@@ -34,8 +34,10 @@ const Title = styled.Text`
 
 const Badge = styled.View`
   background-color: ${(props: ThemedProps) => props.theme.colors.info};
-  padding-horizontal: ${(props: ThemedProps) => props.theme.spacing.xs}px;
-  padding-vertical: 2px;
+  padding-left: ${(props: ThemedProps) => props.theme.spacing.xs}px;
+  padding-right: ${(props: ThemedProps) => props.theme.spacing.xs}px;
+  padding-top: 2px;
+  padding-bottom: 2px;
   border-radius: ${(props: ThemedProps) => props.theme.borderRadius.sm}px;
 `;
 

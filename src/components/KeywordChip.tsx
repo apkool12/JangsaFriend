@@ -20,8 +20,10 @@ const ChipContainer = styled.View<{ sentiment: string }>`
     }
   }};
   border-radius: ${(props: ThemedProps) => props.theme.borderRadius.round}px;
-  padding-horizontal: ${(props: ThemedProps) => props.theme.spacing.sm}px;
-  padding-vertical: ${(props: ThemedProps) => props.theme.spacing.xs}px;
+  padding-left: ${(props: ThemedProps) => props.theme.spacing.sm}px;
+  padding-right: ${(props: ThemedProps) => props.theme.spacing.sm}px;
+  padding-top: ${(props: ThemedProps) => props.theme.spacing.xs}px;
+  padding-bottom: ${(props: ThemedProps) => props.theme.spacing.xs}px;
   margin: ${(props: ThemedProps) => props.theme.spacing.xs}px;
   flex-direction: row;
   align-items: center;

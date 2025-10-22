@@ -19,8 +19,10 @@ const TabContainer = styled.View`
 
 const TabButton = styled.TouchableOpacity<{ isActive: boolean }>`
   flex: 1;
-  padding-vertical: ${(props: ThemedProps) => props.theme.spacing.sm}px;
-  padding-horizontal: ${(props: ThemedProps) => props.theme.spacing.md}px;
+  padding-top: ${(props: ThemedProps) => props.theme.spacing.sm}px;
+  padding-bottom: ${(props: ThemedProps) => props.theme.spacing.sm}px;
+  padding-left: ${(props: ThemedProps) => props.theme.spacing.md}px;
+  padding-right: ${(props: ThemedProps) => props.theme.spacing.md}px;
   border-radius: ${(props: ThemedProps) => props.theme.borderRadius.sm}px;
   background-color: ${(props) =>
     props.isActive ? props.theme.colors.primary : "transparent"};

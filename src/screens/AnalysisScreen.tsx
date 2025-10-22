@@ -42,8 +42,10 @@ const FunnelContainer = styled.View`
 `;
 
 const TabContent = styled.View`
-  padding-horizontal: ${(props: ThemedProps) => props.theme.spacing.sm}px;
-  padding-vertical: ${(props: ThemedProps) => props.theme.spacing.md}px;
+  padding-left: ${(props: ThemedProps) => props.theme.spacing.sm}px;
+  padding-right: ${(props: ThemedProps) => props.theme.spacing.sm}px;
+  padding-top: ${(props: ThemedProps) => props.theme.spacing.md}px;
+  padding-bottom: ${(props: ThemedProps) => props.theme.spacing.md}px;
 `;
 
 const PlaceholderText = styled.Text`
@@ -52,7 +54,8 @@ const PlaceholderText = styled.Text`
   font-weight: ${(props: ThemedProps) => props.theme.fontWeight.regular};
   color: ${(props: ThemedProps) => props.theme.colors.textSecondary};
   text-align: center;
-  padding-vertical: ${(props: ThemedProps) => props.theme.spacing.xl}px;
+  padding-top: ${(props: ThemedProps) => props.theme.spacing.xl}px;
+  padding-bottom: ${(props: ThemedProps) => props.theme.spacing.xl}px;
 `;
 
 const AnalysisScreen = () => {

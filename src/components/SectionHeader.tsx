@@ -8,8 +8,10 @@ interface ThemedProps {
 
 const HeaderContainer = styled.View`
   background-color: ${(props: ThemedProps) => props.theme.colors.background};
-  padding-horizontal: ${(props: ThemedProps) => props.theme.spacing.lg}px;
-  padding-vertical: ${(props: ThemedProps) => props.theme.spacing.md}px;
+  padding-left: ${(props: ThemedProps) => props.theme.spacing.lg}px;
+  padding-right: ${(props: ThemedProps) => props.theme.spacing.lg}px;
+  padding-top: ${(props: ThemedProps) => props.theme.spacing.md}px;
+  padding-bottom: ${(props: ThemedProps) => props.theme.spacing.md}px;
   border-bottom-width: 1px;
   border-bottom-color: ${(props: ThemedProps) => props.theme.colors.border};
 `;

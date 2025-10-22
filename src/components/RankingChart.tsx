@@ -71,7 +71,8 @@ const KeywordRow = styled.View`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding-vertical: ${(props: ThemedProps) => props.theme.spacing.xs}px;
+  padding-top: ${(props: ThemedProps) => props.theme.spacing.xs}px;
+  padding-bottom: ${(props: ThemedProps) => props.theme.spacing.xs}px;
   border-bottom-width: 1px;
   border-bottom-color: ${(props: ThemedProps) => props.theme.colors.border};
 `;
@@ -98,8 +99,10 @@ const RankingText = styled.Text<{ color: string }>`
   min-width: 25px;
   text-align: center;
   background-color: ${(props) => props.color}20;
-  padding-horizontal: 4px;
-  padding-vertical: 2px;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
   border-radius: 4px;
 `;
 
