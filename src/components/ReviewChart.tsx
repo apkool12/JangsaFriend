@@ -17,11 +17,6 @@ const ChartContainer = styled.View`
   margin-bottom: ${(props: ThemedProps) => props.theme.spacing.sm}px;
   margin-left: ${(props: ThemedProps) => props.theme.spacing.sm}px;
   margin-right: ${(props: ThemedProps) => props.theme.spacing.sm}px;
-  shadow-color: #000;
-  shadow-offset: 0px 2px;
-  shadow-opacity: 0.1;
-  shadow-radius: 4px;
-  elevation: 3;
 `;
 
 const ChartTitle = styled.Text`
@@ -105,7 +100,15 @@ export const ReviewChart = ({ data, title }: ReviewChartProps) => {
   };
 
   return (
-    <ChartContainer>
+    <ChartContainer
+      style={{
+        shadowColor: "#000",
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.1,
+        shadowRadius: 4,
+        elevation: 3,
+      }}
+    >
       <ChartTitle>{title}</ChartTitle>
 
       <View style={{ height: 280, alignItems: "center" }}>
