@@ -44,7 +44,7 @@ const BottomTabNavigator = ({ onLogout }: BottomTabNavigatorProps) => {
 
           return <CustomIcon source={iconSource} size={size} color={color} />;
         },
-        tabBarActiveTintColor: "#1B1B1B",
+        tabBarActiveTintColor: "#0C0C0C",
         tabBarInactiveTintColor: "#B0B0B0",
         tabBarStyle: {
           backgroundColor: "#FFFFFF",
