@@ -9,56 +9,112 @@ interface ThemedProps {
 }
 
 const QAItemContainer = styled.View`
-  background-color: ${(props: ThemedProps) =>
-    props.theme.colors.cardBackground};
-  border-radius: ${(props: ThemedProps) => props.theme.borderRadius.lg}px;
-  padding: ${(props: ThemedProps) => props.theme.spacing.md}px;
-  margin-bottom: ${(props: ThemedProps) => props.theme.spacing.sm}px;
+  padding-top: ${(props: ThemedProps) => props.theme.spacing.lg}px;
+  padding-bottom: ${(props: ThemedProps) => props.theme.spacing.lg}px;
+  border-bottom-width: 1px;
+  border-bottom-color: ${(props: ThemedProps) => props.theme.colors.border};
+`;
+
+const MetaRow = styled.View`
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: ${(props: ThemedProps) => props.theme.spacing.xs}px;
+`;
+
+const TopicBadge = styled.View`
+  padding-left: ${(props: ThemedProps) => props.theme.spacing.sm}px;
+  padding-right: ${(props: ThemedProps) => props.theme.spacing.sm}px;
+  padding-top: ${(props: ThemedProps) => props.theme.spacing.xs}px;
+  padding-bottom: ${(props: ThemedProps) => props.theme.spacing.xs}px;
+  border-radius: ${(props: ThemedProps) => props.theme.borderRadius.round}px;
+  background-color: ${(props: ThemedProps) => props.theme.colors.background};
+  margin-right: ${(props: ThemedProps) => props.theme.spacing.sm}px;
+`;
+
+const BadgeLabel = styled.Text`
+  font-family: ${(props: ThemedProps) => props.theme.fontFamily.system};
+  font-size: ${(props: ThemedProps) => props.theme.fontSize.xs}px;
+  font-weight: ${(props: ThemedProps) => props.theme.fontWeight.medium};
+  color: ${(props: ThemedProps) => props.theme.colors.textSecondary};
+`;
+
+const StatusPill = styled.View`
+  padding-left: ${(props: ThemedProps) => props.theme.spacing.sm}px;
+  padding-right: ${(props: ThemedProps) => props.theme.spacing.sm}px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  border-radius: ${(props: ThemedProps) => props.theme.borderRadius.round}px;
+  background-color: ${(props: ThemedProps) => props.theme.colors.success}20;
+`;
+
+const StatusText = styled.Text`
+  font-family: ${(props: ThemedProps) => props.theme.fontFamily.system};
+  font-size: ${(props: ThemedProps) => props.theme.fontSize.xs}px;
+  font-weight: ${(props: ThemedProps) => props.theme.fontWeight.semibold};
+  color: ${(props: ThemedProps) => props.theme.colors.success};
 `;
 
 const QAHeader = styled.View`
   flex-direction: row;
-  align-items: flex-start;
-  margin-bottom: ${(props: ThemedProps) => props.theme.spacing.sm}px;
-`;
-
-const QuestionIcon = styled.View`
-  width: 24px;
-  height: 24px;
-  border-radius: 4px;
-  background-color: ${(props: ThemedProps) => props.theme.colors.textSecondary};
   align-items: center;
-  justify-content: center;
-  margin-right: ${(props: ThemedProps) => props.theme.spacing.sm}px;
-  margin-top: 2px;
+  margin-bottom: ${(props: ThemedProps) => props.theme.spacing.xs}px;
 `;
 
-const QAInfo = styled.View`
-  flex: 1;
+const Dot = styled.View`
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  background-color: ${(props: ThemedProps) => props.theme.colors.primary};
+  margin-right: ${(props: ThemedProps) => props.theme.spacing.sm}px;
 `;
 
 const Question = styled.Text`
   font-family: ${(props: ThemedProps) => props.theme.fontFamily.system};
   font-size: ${(props: ThemedProps) => props.theme.fontSize.md}px;
-  font-weight: ${(props: ThemedProps) => props.theme.fontWeight.medium};
+  font-weight: ${(props: ThemedProps) => props.theme.fontWeight.bold};
   color: ${(props: ThemedProps) => props.theme.colors.text};
-  margin-bottom: 8px;
+  margin-bottom: ${(props: ThemedProps) => props.theme.spacing.xs}px;
 `;
 
 const ExpertInfo = styled.Text`
   font-family: ${(props: ThemedProps) => props.theme.fontFamily.system};
   font-size: ${(props: ThemedProps) => props.theme.fontSize.sm}px;
-  font-weight: ${(props: ThemedProps) => props.theme.fontWeight.regular};
+  font-weight: ${(props: ThemedProps) => props.theme.fontWeight.medium};
   color: ${(props: ThemedProps) => props.theme.colors.textSecondary};
-  margin-bottom: 8px;
+  margin-bottom: ${(props: ThemedProps) => props.theme.spacing.xs}px;
 `;
 
 const Answer = styled.Text`
   font-family: ${(props: ThemedProps) => props.theme.fontFamily.system};
+  font-size: ${(props: ThemedProps) => props.theme.fontSize.sm}px;
+  color: ${(props: ThemedProps) => props.theme.colors.textSecondary};
+  line-height: 20px;
+`;
+
+const FooterRow = styled.View`
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: ${(props: ThemedProps) => props.theme.spacing.sm}px;
+`;
+
+const FooterMeta = styled.Text`
+  font-family: ${(props: ThemedProps) => props.theme.fontFamily.system};
   font-size: ${(props: ThemedProps) => props.theme.fontSize.xs}px;
-  font-weight: ${(props: ThemedProps) => props.theme.fontWeight.regular};
-  color: ${(props: ThemedProps) => props.theme.colors.text};
-  line-height: 18px;
+  color: ${(props: ThemedProps) => props.theme.colors.textSecondary};
+`;
+
+const DetailButton = styled.TouchableOpacity`
+  flex-direction: row;
+  align-items: center;
+`;
+
+const DetailLabel = styled.Text`
+  font-family: ${(props: ThemedProps) => props.theme.fontFamily.system};
+  font-size: ${(props: ThemedProps) => props.theme.fontSize.sm}px;
+  font-weight: ${(props: ThemedProps) => props.theme.fontWeight.medium};
+  color: ${(props: ThemedProps) => props.theme.colors.info};
+  margin-right: 4px;
 `;
 
 interface ExpertQAItemProps {
@@ -76,16 +132,31 @@ export const ExpertQAItem = ({ qa }: ExpertQAItemProps) => {
         elevation: 3,
       }}
     >
+      <MetaRow>
+        <TopicBadge>
+          <BadgeLabel>전문가 답변</BadgeLabel>
+        </TopicBadge>
+        <StatusPill>
+          <StatusText>답변 완료</StatusText>
+        </StatusPill>
+      </MetaRow>
+
       <QAHeader>
-        <QuestionIcon>
-          <MaterialIcons name="help" size={16} color="white" />
-        </QuestionIcon>
-        <QAInfo>
-          <Question>{qa.question}</Question>
-          <ExpertInfo>{qa.expertName}</ExpertInfo>
-          <Answer>{qa.answer}</Answer>
-        </QAInfo>
+        <Dot />
+        <Question>{qa.question}</Question>
       </QAHeader>
+      <ExpertInfo>
+        {qa.expertName} · {qa.expertTitle}
+      </ExpertInfo>
+      <Answer numberOfLines={2}>{qa.answer}</Answer>
+
+      <FooterRow>
+        <FooterMeta>방금 전 · 조회 128</FooterMeta>
+        <DetailButton onPress={() => console.log("Q&A 자세히 보기", qa.id)}>
+          <DetailLabel>자세히 보기</DetailLabel>
+          <MaterialIcons name="chevron-right" size={18} color="#4D8EFF" />
+        </DetailButton>
+      </FooterRow>
     </QAItemContainer>
   );
 };

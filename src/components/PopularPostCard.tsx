@@ -16,89 +16,91 @@ const CardContainer = styled.View`
   margin-bottom: ${(props: ThemedProps) => props.theme.spacing.sm}px;
 `;
 
-const PostHeader = styled.View`
+const TopicBadge = styled.View`
+  align-self: flex-start;
+  padding-left: ${(props: ThemedProps) => props.theme.spacing.sm}px;
+  padding-right: ${(props: ThemedProps) => props.theme.spacing.sm}px;
+  padding-top: ${(props: ThemedProps) => props.theme.spacing.xs}px;
+  padding-bottom: ${(props: ThemedProps) => props.theme.spacing.xs}px;
+  border-radius: ${(props: ThemedProps) => props.theme.borderRadius.sm}px;
+  background-color: ${(props: ThemedProps) => props.theme.colors.background};
+  margin-bottom: ${(props: ThemedProps) => props.theme.spacing.xs}px;
+`;
+
+const BadgeText = styled.Text`
+  font-family: ${(props: ThemedProps) => props.theme.fontFamily.system};
+  font-size: ${(props: ThemedProps) => props.theme.fontSize.xs}px;
+  font-weight: ${(props: ThemedProps) => props.theme.fontWeight.medium};
+  color: ${(props: ThemedProps) => props.theme.colors.textSecondary};
+`;
+
+const QuestionRow = styled.View`
   flex-direction: row;
-  align-items: center;
-  margin-bottom: ${(props: ThemedProps) => props.theme.spacing.sm}px;
+  align-items: flex-start;
+  margin-bottom: ${(props: ThemedProps) => props.theme.spacing.xs}px;
 `;
 
-const Avatar = styled.View`
-  width: 40px;
-  height: 40px;
-  border-radius: 20px;
-  background-color: ${(props: ThemedProps) => props.theme.colors.primary};
-  align-items: center;
-  justify-content: center;
-  margin-right: ${(props: ThemedProps) => props.theme.spacing.sm}px;
+const QuestionLabel = styled.Text`
+  font-family: ${(props: ThemedProps) => props.theme.fontFamily.system};
+  font-size: ${(props: ThemedProps) => props.theme.fontSize.lg}px;
+  font-weight: ${(props: ThemedProps) => props.theme.fontWeight.semibold};
+  color: ${(props: ThemedProps) => props.theme.colors.warning};
+  margin-right: ${(props: ThemedProps) => props.theme.spacing.xs}px;
 `;
 
-const PostInfo = styled.View`
+const QuestionText = styled.Text`
   flex: 1;
-`;
-
-const PostTitle = styled.Text`
   font-family: ${(props: ThemedProps) => props.theme.fontFamily.system};
   font-size: ${(props: ThemedProps) => props.theme.fontSize.md}px;
-  font-weight: ${(props: ThemedProps) => props.theme.fontWeight.semibold};
+  font-weight: ${(props: ThemedProps) => props.theme.fontWeight.bold};
   color: ${(props: ThemedProps) => props.theme.colors.text};
-  margin-bottom: 4px;
+  line-height: 22px;
 `;
 
 const PostMeta = styled.Text`
   font-family: ${(props: ThemedProps) => props.theme.fontFamily.system};
-  font-size: ${(props: ThemedProps) => props.theme.fontSize.sm}px;
-  font-weight: ${(props: ThemedProps) => props.theme.fontWeight.regular};
+  font-size: ${(props: ThemedProps) => props.theme.fontSize.xs}px;
   color: ${(props: ThemedProps) => props.theme.colors.textSecondary};
+  margin-bottom: ${(props: ThemedProps) => props.theme.spacing.sm}px;
 `;
 
 const PostContent = styled.Text`
   font-family: ${(props: ThemedProps) => props.theme.fontFamily.system};
   font-size: ${(props: ThemedProps) => props.theme.fontSize.sm}px;
-  font-weight: ${(props: ThemedProps) => props.theme.fontWeight.regular};
   color: ${(props: ThemedProps) => props.theme.colors.text};
   line-height: 20px;
-  margin-bottom: ${(props: ThemedProps) => props.theme.spacing.sm}px;
+  margin-bottom: ${(props: ThemedProps) => props.theme.spacing.md}px;
 `;
 
-const PostActions = styled.View`
+const PostFooter = styled.View`
   flex-direction: row;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  margin-top: ${(props: ThemedProps) => props.theme.spacing.sm}px;
 `;
 
-const ActionButtons = styled.View`
+const FooterMeta = styled.Text`
+  font-family: ${(props: ThemedProps) => props.theme.fontFamily.system};
+  font-size: ${(props: ThemedProps) => props.theme.fontSize.xs}px;
+  color: ${(props: ThemedProps) => props.theme.colors.textSecondary};
+`;
+
+const FooterActions = styled.View`
   flex-direction: row;
   align-items: center;
 `;
 
-const ActionButton = styled.TouchableOpacity`
+const ActionItem = styled.TouchableOpacity`
   flex-direction: row;
   align-items: center;
-  background-color: ${(props: ThemedProps) => props.theme.colors.primary};
-  padding: 8px 12px;
-  border-radius: ${(props: ThemedProps) => props.theme.borderRadius.sm}px;
-  margin-right: ${(props: ThemedProps) => props.theme.spacing.sm}px;
+  margin-left: ${(props: ThemedProps) => props.theme.spacing.md}px;
 `;
 
-const ActionButtonText = styled.Text`
+const ActionCount = styled.Text`
   font-family: ${(props: ThemedProps) => props.theme.fontFamily.system};
   font-size: ${(props: ThemedProps) => props.theme.fontSize.sm}px;
-  font-weight: ${(props: ThemedProps) => props.theme.fontWeight.medium};
-  color: white;
+  color: ${(props: ThemedProps) => props.theme.colors.textSecondary};
   margin-left: 4px;
-`;
-
-const DetailButton = styled.TouchableOpacity`
-  background-color: ${(props: ThemedProps) => props.theme.colors.primary};
-  padding: 8px 16px;
-  border-radius: ${(props: ThemedProps) => props.theme.borderRadius.sm}px;
-`;
-
-const DetailButtonText = styled.Text`
-  font-family: ${(props: ThemedProps) => props.theme.fontFamily.system};
-  font-size: ${(props: ThemedProps) => props.theme.fontSize.sm}px;
-  font-weight: ${(props: ThemedProps) => props.theme.fontWeight.medium};
-  color: white;
 `;
 
 interface PopularPostCardProps {
@@ -128,35 +130,42 @@ export const PopularPostCard = ({ post }: PopularPostCardProps) => {
         elevation: 3,
       }}
     >
-      <PostHeader>
-        <Avatar>
-          <MaterialIcons name="person" size={20} color="white" />
-        </Avatar>
-        <PostInfo>
-          <PostTitle>{post.title}</PostTitle>
-          <PostMeta>
-            {post.authorName} | {post.authorBusiness} | {post.daysAgo}
-          </PostMeta>
-        </PostInfo>
-      </PostHeader>
+      <TopicBadge>
+        <BadgeText>우리동네질문</BadgeText>
+      </TopicBadge>
 
-      <PostContent>{post.content}</PostContent>
+      <QuestionRow>
+        <QuestionLabel>Q.</QuestionLabel>
+        <QuestionText>{post.title}</QuestionText>
+      </QuestionRow>
 
-      <PostActions>
-        <ActionButtons>
-          <ActionButton onPress={handleLike}>
-            <MaterialIcons name="thumb-up" size={16} color="white" />
-            <ActionButtonText>{post.likes}</ActionButtonText>
-          </ActionButton>
-          <ActionButton onPress={handleComment}>
-            <MaterialIcons name="comment" size={16} color="white" />
-            <ActionButtonText>{post.comments}</ActionButtonText>
-          </ActionButton>
-        </ActionButtons>
-        <DetailButton onPress={handleDetail}>
-          <DetailButtonText>자세히 보기</DetailButtonText>
-        </DetailButton>
-      </PostActions>
+      <PostMeta>
+        {post.authorBusiness} · {post.authorName} · {post.daysAgo}
+      </PostMeta>
+
+      <PostContent numberOfLines={2}>{post.content}</PostContent>
+
+      <PostFooter>
+        <FooterMeta>공감하기 · 댓글 {post.comments}</FooterMeta>
+        <FooterActions>
+          <ActionItem onPress={handleLike}>
+            <MaterialIcons
+              name="favorite-border"
+              size={18}
+              color={post.likes > 0 ? "#F25C54" : "#B0B0B0"}
+            />
+            <ActionCount>{post.likes}</ActionCount>
+          </ActionItem>
+          <ActionItem onPress={handleComment}>
+            <MaterialIcons
+              name="chat-bubble-outline"
+              size={18}
+              color="#B0B0B0"
+            />
+            <ActionCount>{post.comments}</ActionCount>
+          </ActionItem>
+        </FooterActions>
+      </PostFooter>
     </CardContainer>
   );
 };

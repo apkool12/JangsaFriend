@@ -37,9 +37,7 @@ const TabText = styled.Text<{ isActive: boolean } & ThemedProps>`
       ? props.theme.fontWeight.bold
       : props.theme.fontWeight.medium};
   color: ${(props: { isActive: boolean } & ThemedProps) =>
-    props.isActive
-      ? props.theme.colors.text
-      : props.theme.colors.textSecondary};
+    props.isActive ? "#FFFFFF" : props.theme.colors.textSecondary};
 `;
 
 interface Tab {
