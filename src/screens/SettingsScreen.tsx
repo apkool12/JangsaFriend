@@ -165,7 +165,11 @@ const Divider = styled.View`
   margin: ${(props: ThemedProps) => props.theme.spacing.sm}px 0;
 `;
 
-const SettingsScreen = () => {
+interface SettingsScreenProps {
+  onLogout?: () => void;
+}
+
+const SettingsScreen = ({ onLogout }: SettingsScreenProps) => {
   const [pushNotification, setPushNotification] = useState(true);
   const [monthlyReport, setMonthlyReport] = useState(true);
   const [darkMode, setDarkMode] = useState(false);
@@ -176,7 +180,7 @@ const SettingsScreen = () => {
       {
         text: "로그아웃",
         style: "destructive",
-        onPress: () => console.log("로그아웃"),
+        onPress: () => onLogout?.(),
       },
     ]);
   };

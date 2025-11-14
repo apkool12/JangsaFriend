@@ -19,7 +19,11 @@ import SettingIcon from "../../assets/navbar/setting.svg";
 
 const Tab = createBottomTabNavigator();
 
-const BottomTabNavigator = () => {
+interface BottomTabNavigatorProps {
+  onLogout?: () => void;
+}
+
+const BottomTabNavigator = ({ onLogout }: BottomTabNavigatorProps) => {
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
@@ -131,7 +135,6 @@ const BottomTabNavigator = () => {
       />
       <Tab.Screen
         name="Settings"
-        component={SettingsScreen}
         options={{
           tabBarLabel: ({ focused, color }) => (
             <Text
@@ -146,7 +149,9 @@ const BottomTabNavigator = () => {
             </Text>
           ),
         }}
-      />
+      >
+        {() => <SettingsScreen onLogout={onLogout} />}
+      </Tab.Screen>
     </Tab.Navigator>
   );
 };
