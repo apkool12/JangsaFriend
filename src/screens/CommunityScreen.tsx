@@ -1,13 +1,14 @@
 import React from "react";
 import styled from "styled-components/native";
 import { DefaultTheme } from "styled-components/native";
-import { FlatList, TouchableOpacity, ScrollView } from "react-native";
+import { SectionList } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 import {
   PopularPostCard,
   ExpertQAItem,
   BossRankingItem,
   Header,
+  EmptyState,
 } from "../components";
 import { PopularPost, ExpertQA, BossRanking } from "../types/community";
 
@@ -20,18 +21,22 @@ const Container = styled.View`
   background-color: ${(props: ThemedProps) => props.theme.colors.background};
 `;
 
-const ScrollContainer = styled.ScrollView`
-  flex: 1;
-  background-color: ${(props: ThemedProps) => props.theme.colors.background};
-`;
-
 const SectionContainer = styled.View`
   padding: ${(props: ThemedProps) => props.theme.spacing.lg}px;
   padding-bottom: ${(props: ThemedProps) => props.theme.spacing.md}px;
 `;
 
+const SectionItemContainer = styled.View`
+  padding-left: ${(props: ThemedProps) => props.theme.spacing.lg}px;
+  padding-right: ${(props: ThemedProps) => props.theme.spacing.lg}px;
+  margin-bottom: ${(props: ThemedProps) => props.theme.spacing.sm}px;
+`;
+
 const ContentContainer = styled.View`
-  padding-bottom: 90px; /* 하단 탭 높이만큼 패딩 */
+  flex: 1;
+  justify-content: center;
+  padding-left: ${(props: ThemedProps) => props.theme.spacing.lg}px;
+  padding-right: ${(props: ThemedProps) => props.theme.spacing.lg}px;
 `;
 
 const SectionTitle = styled.Text`
@@ -63,7 +68,7 @@ const popularPosts: PopularPost[] = [
     id: "1",
     authorName: "김사장",
     authorBusiness: "음식점",
-    title: "인스타그램 광고 성공 사례",
+    title: "인스타로 성공할 수 있었던 이유",
     content:
       "인스타그램 광고를 시작한 지 3개월 만에 매출이 30% 상승했습니다. 제가 진행한 방법을 공유합니다...",
     likes: 52,
@@ -134,62 +139,97 @@ const bossRankings: BossRanking[] = [
   },
 ];
 
+type CommunityItem = PopularPost | ExpertQA | BossRanking;
+
+type CommunitySection = {
+  title: string;
+  type: "popular" | "qa" | "ranking";
+  data: CommunityItem[];
+};
+
+const communitySections: CommunitySection[] = [
+  { title: "인기 게시글", type: "popular", data: popularPosts },
+  { title: "전문가 Q&A", type: "qa", data: expertQAs },
+  { title: "사장님 랭킹", type: "ranking", data: bossRankings },
+];
+
 const CommunityScreen = () => {
   const handleAskQuestion = () => {
     console.log("질문하기 버튼 클릭");
   };
 
-  const renderPopularPost = ({ item }: { item: PopularPost }) => (
-    <PopularPostCard post={item} />
+  const hasContent = communitySections.some(
+    (section) => section.data.length > 0
   );
 
-  const renderExpertQA = ({ item }: { item: ExpertQA }) => (
-    <ExpertQAItem qa={item} />
-  );
+  const renderSectionItem = ({
+    item,
+    section,
+  }: {
+    item: CommunityItem;
+    section: CommunitySection;
+  }) => {
+    if (section.type === "popular") {
+      return (
+        <SectionItemContainer>
+          <PopularPostCard post={item as PopularPost} />
+        </SectionItemContainer>
+      );
+    }
 
-  const renderBossRanking = ({ item }: { item: BossRanking }) => (
-    <BossRankingItem ranking={item} />
-  );
+    if (section.type === "qa") {
+      return (
+        <SectionItemContainer>
+          <ExpertQAItem qa={item as ExpertQA} />
+        </SectionItemContainer>
+      );
+    }
+
+    return (
+      <SectionItemContainer>
+        <BossRankingItem ranking={item as BossRanking} />
+      </SectionItemContainer>
+    );
+  };
 
   return (
     <Container>
       <Header />
-      <ScrollContainer showsVerticalScrollIndicator={false}>
+      {hasContent ? (
+        <SectionList<CommunityItem, CommunitySection>
+          sections={communitySections}
+          keyExtractor={(item) => item.id}
+          renderItem={renderSectionItem}
+          renderSectionHeader={({ section }) => (
+            <SectionContainer>
+              <SectionTitle>{section.title}</SectionTitle>
+            </SectionContainer>
+          )}
+          renderSectionFooter={({ section }) =>
+            section.type === "qa" ? (
+              <SectionItemContainer>
+                <AskQuestionButton onPress={handleAskQuestion}>
+                  <AskQuestionButtonText>질문하기</AskQuestionButtonText>
+                </AskQuestionButton>
+              </SectionItemContainer>
+            ) : null
+          }
+          stickySectionHeadersEnabled={false}
+          showsVerticalScrollIndicator={false}
+          contentContainerStyle={{
+            paddingBottom: 90,
+          }}
+        />
+      ) : (
         <ContentContainer>
-          <SectionContainer>
-            <SectionTitle>인기 게시글</SectionTitle>
-            <FlatList
-              data={popularPosts}
-              renderItem={renderPopularPost}
-              keyExtractor={(item) => item.id}
-              scrollEnabled={false}
-            />
-          </SectionContainer>
-
-          <SectionContainer>
-            <SectionTitle>전문가 Q&A</SectionTitle>
-            <FlatList
-              data={expertQAs}
-              renderItem={renderExpertQA}
-              keyExtractor={(item) => item.id}
-              scrollEnabled={false}
-            />
-            <AskQuestionButton onPress={handleAskQuestion}>
-              <AskQuestionButtonText>질문하기</AskQuestionButtonText>
-            </AskQuestionButton>
-          </SectionContainer>
-
-          <SectionContainer>
-            <SectionTitle>사장님 랭킹</SectionTitle>
-            <FlatList
-              data={bossRankings}
-              renderItem={renderBossRanking}
-              keyExtractor={(item) => item.id}
-              scrollEnabled={false}
-            />
-          </SectionContainer>
+          <EmptyState
+            title="아직 올라온 콘텐츠가 없어요"
+            description="첫 번째 질문이나 게시글을 작성해 커뮤니티를 시작해보세요."
+            actionLabel="질문 작성하기"
+            onAction={handleAskQuestion}
+          />
         </ContentContainer>
-      </ScrollContainer>
+      )}
     </Container>
   );
 };

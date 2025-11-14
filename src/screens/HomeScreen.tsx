@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { ScrollView, View, Text, TouchableOpacity } from "react-native";
+import { ScrollView } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import styled from "styled-components/native";
 import { DefaultTheme } from "styled-components/native";
 import {
@@ -11,6 +12,10 @@ import {
   FloatingActionButton,
   ChatBotModal,
 } from "../components";
+import {
+  HomeScreenNavigationProp,
+  RootTabParamList,
+} from "../navigation/types";
 
 // SVG 아이콘들 import
 import LineChartIcon from "../../assets/icon/line_chart.svg";
@@ -88,10 +93,11 @@ const UpdatesContainer = styled.View`
 `;
 
 const HomeScreen = () => {
+  const navigation = useNavigation<HomeScreenNavigationProp>();
   const [isChatModalVisible, setIsChatModalVisible] = useState(false);
 
-  const handleIconPress = (feature: string) => {
-    console.log(`${feature} 버튼이 클릭되었습니다!`);
+  const handleNavigate = (route: keyof RootTabParamList) => {
+    navigation.navigate(route);
   };
 
   const handleChatPress = () => {
@@ -106,17 +112,17 @@ const HomeScreen = () => {
           <IconButton
             iconSource={require("../../assets/3dicon/chart.png")}
             label="AI 분석"
-            onPress={() => handleIconPress("AI 분석")}
+            onPress={() => handleNavigate("Analysis")}
           />
           <IconButton
             iconSource={require("../../assets/3dicon/education.png")}
             label="교육 자료"
-            onPress={() => handleIconPress("교육 자료")}
+            onPress={() => handleNavigate("Education")}
           />
           <IconButton
             iconSource={require("../../assets/3dicon/comm.png")}
             label="커뮤니티"
-            onPress={() => handleIconPress("커뮤니티")}
+            onPress={() => handleNavigate("Community")}
           />
         </MainFeaturesContainer>
 
@@ -146,16 +152,19 @@ const HomeScreen = () => {
             iconSource={LineChartIcon}
             title="마케팅 ROI 개선"
             description="전월 대비 마케팅 효율성이 15% 상승했습니다"
+            onPress={() => handleNavigate("Analysis")}
           />
           <UpdateItem
             iconSource={DropUpIcon}
             title="네이버 플레이스 순위"
             description="'학하동 카페' 키워드 5위 → 3위로 상승"
+            onPress={() => handleNavigate("Community")}
           />
           <UpdateItem
             iconSource={NewsIcon}
             title="새 교육 콘텐츠"
             description="'SNS 마케팅 활용법' 강의가 추가되었습니"
+            onPress={() => handleNavigate("Education")}
           />
         </UpdatesContainer>
       </ScrollContainer>

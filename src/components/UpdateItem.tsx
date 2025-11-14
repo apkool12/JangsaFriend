@@ -9,7 +9,7 @@ interface ThemedProps {
   theme: DefaultTheme;
 }
 
-const UpdateContainer = styled.View`
+const UpdateContainer = styled.TouchableOpacity`
   flex-direction: row;
   align-items: center;
   padding: ${(props: ThemedProps) => props.theme.spacing.md}px;
@@ -54,15 +54,20 @@ interface UpdateItemProps {
   iconSource: ImageSourcePropType | React.ComponentType<SvgProps>;
   title: string;
   description: string;
+  onPress?: () => void;
 }
 
 export const UpdateItem = ({
   iconSource,
   title,
   description,
+  onPress,
 }: UpdateItemProps) => {
   return (
     <UpdateContainer
+      onPress={onPress}
+      activeOpacity={onPress ? 0.8 : 1}
+      disabled={!onPress}
       style={{
         shadowColor: "#000",
         shadowOffset: { width: 0, height: 2 },

@@ -55,10 +55,10 @@ const ExpertInfo = styled.Text`
 
 const Answer = styled.Text`
   font-family: ${(props: ThemedProps) => props.theme.fontFamily.system};
-  font-size: ${(props: ThemedProps) => props.theme.fontSize.sm}px;
+  font-size: ${(props: ThemedProps) => props.theme.fontSize.xs}px;
   font-weight: ${(props: ThemedProps) => props.theme.fontWeight.regular};
   color: ${(props: ThemedProps) => props.theme.colors.text};
-  line-height: 20px;
+  line-height: 18px;
 `;
 
 interface ExpertQAItemProps {
